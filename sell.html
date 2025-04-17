@@ -1,1 +1,77 @@
-
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent Items - DTech Services</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .item-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .item {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .item h2 {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+    .item p {
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+    .price {
+      font-weight: bold;
+      color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <h1>Available Items for Rent</h1>
+  <div class="item-grid">
+    <div class="item">
+      <img src="item1.jpg" alt="Item 1">
+      <h2>Bluetooth Speaker</h2>
+      <p class="price">R200 (Deposit)</p>
+      <p>R20 per 24 hours</p>
+    </div>
+    <div class="item">
+      <img src="item2.jpg" alt="Item 2">
+      <h2>Camping Tent</h2>
+      <p class="price">R500 (Deposit)</p>
+      <p>R50 per 24 hours</p>
+    </div>
+    <div class="item">
+      <img src="item3.jpg" alt="Item 3">
+      <h2>Projector</h2>
+      <p class="price">R800 (Deposit)</p>
+      <p>R100 per 24 hours</p>
+    </div>
+    <!-- Add more items here -->
+  </div>
+</body>
+</html>
