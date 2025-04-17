@@ -104,8 +104,8 @@
         alert("Please provide both name and WhatsApp number.");
         return;
       }
-      const subject = `Rental Request: ${itemName}`;
-      const body = `Hello DTech Services,%0D%0A%0D%0AI would like to rent the following item:%0D%0A%0D%0AItem: ${itemName}%0D%0AName: ${name}%0D%0AWhatsApp: ${whatsapp}%0D%0A%0D%0AI've attached my ID as required.%0D%0A%0D%0ARegards,%0D%0A${name}`;
+      const subject = encodeURIComponent(`Rental Request: ${itemName}`);
+      const body = encodeURIComponent(`Hello DTech Services,%0D%0A%0D%0AI would like to rent the following item:%0D%0A%0D%0AItem: ${itemName}%0D%0AName: ${name}%0D%0AWhatsApp: ${whatsapp}%0D%0A%0D%0AI've attached my ID as required.%0D%0A%0D%0ARegards,%0D%0A${name}`);
       window.location.href = `mailto:dtech2services@gmail.com?subject=${subject}&body=${body}`;
     }function showImageModal(src) {
   const modal = document.getElementById("imgModal");
