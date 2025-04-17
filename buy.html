@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buy Items - DTech Services</title>
   <style>
     body {
@@ -75,15 +75,15 @@
       background-color: rgba(0,0,0,0.8);
     }
     .modal-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
+      margin: 5% auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
     }
     .modal-content img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 12px;
+      width: 100%;
+      height: auto;
     }
     .close {
       position: absolute;
@@ -94,50 +94,65 @@
       font-weight: bold;
       cursor: pointer;
     }
+    #message {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #16a34a;
+      font-weight: bold;
+      display: none;
+    }
   </style>
+  <script>
+    function buyItem(itemName, itemPrice) {
+      const subject = encodeURIComponent(`Purchase Request: ${itemName}`);
+      const body = encodeURIComponent(`Hello DTech Services,%0D%0A%0D%0AI am interested in buying the following item:%0D%0A%0D%0AItem: ${itemName}%0D%0APrice: ${itemPrice}%0D%0A%0D%0AFull Name: [Enter your name here]%0D%0AWhatsApp Number: [Enter your WhatsApp number here]%0D%0A%0D%0APlease note: My ID or Student Card is attached.%0D%0A%0D%0AThank you,%0D%0A[Your Name Here]`);
+      const mailtoLink = `mailto:dtech2services@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = "https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365";
+      setTimeout(() => {
+        window.location.href = mailtoLink;
+        document.getElementById("message").style.display = "block";
+      }, 1000);
+    }function showImageModal(src) {
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImage");
+  modal.style.display = "block";
+  modalImg.src = src;
+}
+
+function closeModal() {
+  document.getElementById("imgModal").style.display = "none";
+}
+
+  </script>
 </head>
 <body>
-  <h1>Items Available for Purchase</h1>
+  <h1>Available Items for Purchase</h1>
   <div class="item-grid">
     <div class="item">
-      <img src="item4.png" alt="Laptop Bag" onclick="showImageModal(this.src)">
-      <h2>Laptop Bag</h2>
-      <p class="price">R250</p>
-      <button class="buy-button" onclick="buyItem('Laptop Bag', 'R250')">Buy This Item</button>
+      <img src="item1.png" alt="Bluetooth Speaker" onclick="showImageModal(this.src)">
+      <h2>Bluetooth Speaker</h2>
+      <p class="price">R350</p>
+      <button class="buy-button" onclick="buyItem('Bluetooth Speaker', 'R350')">Buy This Item</button>
     </div>
     <div class="item">
-      <img src="item5.png" alt="Smart Watch" onclick="showImageModal(this.src)">
-      <h2>Smart Watch</h2>
-      <p class="price">R600</p>
-      <button class="buy-button" onclick="buyItem('Smart Watch', 'R600')">Buy This Item</button>
+      <img src="item2.png" alt="Camping Tent" onclick="showImageModal(this.src)">
+      <h2>Camping Tent</h2>
+      <p class="price">R900</p>
+      <button class="buy-button" onclick="buyItem('Camping Tent', 'R900')">Buy This Item</button>
     </div>
     <div class="item">
-      <img src="item6.png" alt="Desk Lamp" onclick="showImageModal(this.src)">
-      <h2>Desk Lamp</h2>
-      <p class="price">R120</p>
-      <button class="buy-button" onclick="buyItem('Desk Lamp', 'R120')">Buy This Item</button>
+      <img src="item3.png" alt="Projector" onclick="showImageModal(this.src)">
+      <h2>Projector</h2>
+      <p class="price">R1500</p>
+      <button class="buy-button" onclick="buyItem('Projector', 'R1500')">Buy This Item</button>
     </div>
-  </div>  <!-- Image Modal -->  <div id="imgModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
+  </div>
+  <div id="imgModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
     <div class="modal-content">
       <img id="modalImage" src="" alt="Full View">
     </div>
-  </div>  <script>
-    function buyItem(itemName, itemPrice) {
-      const subject = `Purchase Request: ${itemName}`;
-      const body = `Hello DTech Services,%0D%0A%0D%0AI would like to buy the following item:%0D%0A%0D%0AItem Name: ${itemName}%0D%0APrice: ${itemPrice}%0D%0A%0D%0AFull Name: [Enter your full name here]%0D%0AWhatsApp Number: [Enter your WhatsApp number here]%0D%0A%0D%0ANote: I will attach a picture of my ID or Student Card as requested.%0D%0A%0D%0AThank you,%0D%0A[Your Name Here]`;
-      window.location.href = `mailto:dtech2services@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-    }
-
-    function showImageModal(src) {
-      const modal = document.getElementById("imgModal");
-      const modalImg = document.getElementById("modalImage");
-      modalImg.src = src;
-      modal.style.display = "block";
-    }
-
-    function closeModal() {
-      document.getElementById("imgModal").style.display = "none";
-    }
-  </script></body>
+  </div>
+  <div id="message">Thank you! Please check your email app to complete your request.</div>
+</body>
 </html>
