@@ -76,15 +76,15 @@
       background-color: rgba(0,0,0,0.8);
     }
     .modal-content {
-      margin: 5% auto;
-      display: block;
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
     }
     .modal-content img {
-      width: 100%;
-      height: auto;
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
     }
     .close {
       position: absolute;
@@ -96,39 +96,6 @@
       cursor: pointer;
     }
   </style>
-  <script>
-    function rentItem(itemName, itemPrice) {
-      const subject = `Rental Request: ${itemName}`;
-      const body = `Hello DTech Services,
-
-I would like to rent the following item:
-
-Item Name: ${itemName}
-Price: ${itemPrice}
-
-Full Name: [Enter your name here]
-WhatsApp Number: [Enter your WhatsApp number here]
-
-Note: I will attach a picture of my ID or Student Card as requested.
-
-Thank you,
-[Your Name Here]`;
-
-      const mailtoLink = `mailto:dtech2services@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailtoLink;
-    }
-
-    function showImageModal(src) {
-      const modal = document.getElementById("imgModal");
-      const modalImg = document.getElementById("modalImage");
-      modal.style.display = "block";
-      modalImg.src = src;
-    }
-
-    function closeModal() {
-      document.getElementById("imgModal").style.display = "none";
-    }
-  </script>
 </head>
 <body>
   <h1>Available Items for Rent</h1>
@@ -157,11 +124,45 @@ Thank you,
   </div>
 
   <!-- Image Modal -->
-  <div id="imgModal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
+  <div id="imgModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
     <div class="modal-content">
       <img id="modalImage" src="" alt="Full View">
     </div>
   </div>
+
+  <script>
+    function rentItem(itemName, itemPrice) {
+      const subject = `Rental Request: ${itemName}`;
+      const body = `Hello DTech Services,
+
+I would like to rent the following item:
+
+Item Name: ${itemName}
+Price: ${itemPrice}
+
+Full Name: [Enter your full name here]
+WhatsApp Number: [Enter your WhatsApp number here]
+
+Note: I will attach a picture of my ID or Student Card as requested.
+
+Thank you,
+[Your Name Here]`;
+
+      const mailtoLink = `mailto:dtech2services@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+    }
+
+    function showImageModal(src) {
+      const modal = document.getElementById("imgModal");
+      const modalImg = document.getElementById("modalImage");
+      modalImg.src = src;
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+  </script>
 </body>
 </html>
