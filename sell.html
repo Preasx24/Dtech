@@ -1,7 +1,8 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rent Items - DTech Services</title>
   <style>
     body {
@@ -97,29 +98,36 @@
   </style>
   <script>
     function rentItem(itemName, itemPrice) {
-      const subject = encodeURIComponent(`Rental Request: ${itemName}`);
-      const body = encodeURIComponent(
-`Hello DTech Services,I would like to rent the following item:
+      const subject = `Rental Request: ${itemName}`;
+      const body = `Hello DTech Services,
 
-Item: ${itemName} Price: ${itemPrice}
+I would like to rent the following item:
 
-Full Name: [Enter your name here] WhatsApp Number: [Enter your WhatsApp number here]
+Item Name: ${itemName}
+Price: ${itemPrice}
 
-Please note: My ID or Student Card is attached.
+Full Name: [Enter your name here]
+WhatsApp Number: [Enter your WhatsApp number here]
 
-Thank you, [Your Name Here]); window.location.href =mailto:dtech2services@gmail.com?subject=${subject}&body=${body}`; }
+Note: I will attach a picture of my ID or Student Card as requested.
 
-function showImageModal(src) {
-  const modal = document.getElementById("imgModal");
-  const modalImg = document.getElementById("modalImage");
-  modal.style.display = "block";
-  modalImg.src = src;
-}
+Thank you,
+[Your Name Here]`;
 
-function closeModal() {
-  document.getElementById("imgModal").style.display = "none";
-}
+      const mailtoLink = `mailto:dtech2services@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+    }
 
+    function showImageModal(src) {
+      const modal = document.getElementById("imgModal");
+      const modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
   </script>
 </head>
 <body>
@@ -146,7 +154,10 @@ function closeModal() {
       <p>R100 per 24 hours</p>
       <button class="rent-button" onclick="rentItem('Projector', 'R800 (Deposit), R100 per 24hrs')">Rent This Item</button>
     </div>
-  </div>  <!-- Image Modal -->  <div id="imgModal" class="modal" onclick="closeModal()">
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imgModal" class="modal" onclick="closeModal()">
     <span class="close">&times;</span>
     <div class="modal-content">
       <img id="modalImage" src="" alt="Full View">
