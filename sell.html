@@ -98,9 +98,18 @@
   <script>
     function rentItem(itemName, itemPrice) {
       const subject = encodeURIComponent(`Rental Request: ${itemName}`);
-      const body = encodeURIComponent(`Hello DTech Services,%0D%0A%0D%0AI would like to rent the following item:%0D%0A%0D%0AItem: ${itemName}%0D%0APrice: ${itemPrice}%0D%0A%0D%0AFull Name: [Enter your name here]%0D%0AWhatsApp Number: [Enter your WhatsApp number here]%0D%0A%0D%0AID or Student Card: Please see attached.%0D%0A%0D%0ARegards,%0D%0A[Your Name Here]`);
-      window.location.href = `mailto:dtech2services@gmail.com?subject=${subject}&body=${body}`;
-    }function showImageModal(src) {
+      const body = encodeURIComponent(
+`Hello DTech Services,I would like to rent the following item:
+
+Item: ${itemName} Price: ${itemPrice}
+
+Full Name: [Enter your name here] WhatsApp Number: [Enter your WhatsApp number here]
+
+Please note: My ID or Student Card is attached.
+
+Thank you, [Your Name Here]); window.location.href =mailto:dtech2services@gmail.com?subject=${subject}&body=${body}`; }
+
+function showImageModal(src) {
   const modal = document.getElementById("imgModal");
   const modalImg = document.getElementById("modalImage");
   modal.style.display = "block";
