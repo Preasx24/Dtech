@@ -63,7 +63,6 @@
       cursor: pointer;
       font-size: 0.9rem;
     }
-    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -97,15 +96,9 @@
     }
   </style>
   <script>
-    function rentItem(itemName) {
-      const name = prompt("Enter your full name:");
-      const whatsapp = prompt("Enter your WhatsApp number:");
-      if (!name || !whatsapp) {
-        alert("Please provide both name and WhatsApp number.");
-        return;
-      }
+    function rentItem(itemName, itemPrice) {
       const subject = encodeURIComponent(`Rental Request: ${itemName}`);
-      const body = encodeURIComponent(`Hello DTech Services,%0D%0A%0D%0AI would like to rent the following item:%0D%0A%0D%0AItem: ${itemName}%0D%0AName: ${name}%0D%0AWhatsApp: ${whatsapp}%0D%0A%0D%0AI've attached my ID as required.%0D%0A%0D%0ARegards,%0D%0A${name}`);
+      const body = encodeURIComponent(`Hello DTech Services,%0D%0A%0D%0AI would like to rent the following item:%0D%0A%0D%0AItem: ${itemName}%0D%0APrice: ${itemPrice}%0D%0A%0D%0AFull Name: [Enter your name here]%0D%0AWhatsApp Number: [Enter your WhatsApp number here]%0D%0A%0D%0AID or Student Card: Please see attached.%0D%0A%0D%0ARegards,%0D%0A[Your Name Here]`);
       window.location.href = `mailto:dtech2services@gmail.com?subject=${subject}&body=${body}`;
     }function showImageModal(src) {
   const modal = document.getElementById("imgModal");
@@ -128,21 +121,21 @@ function closeModal() {
       <h2>Bluetooth Speaker</h2>
       <p class="price">R200 (Deposit)</p>
       <p>R20 per 24 hours</p>
-      <button class="rent-button" onclick="rentItem('Bluetooth Speaker')">Rent This Item</button>
+      <button class="rent-button" onclick="rentItem('Bluetooth Speaker', 'R200 (Deposit), R20 per 24hrs')">Rent This Item</button>
     </div>
     <div class="item">
       <img src="item2.png" alt="Camping Tent" onclick="showImageModal(this.src)">
       <h2>Camping Tent</h2>
       <p class="price">R500 (Deposit)</p>
       <p>R50 per 24 hours</p>
-      <button class="rent-button" onclick="rentItem('Camping Tent')">Rent This Item</button>
+      <button class="rent-button" onclick="rentItem('Camping Tent', 'R500 (Deposit), R50 per 24hrs')">Rent This Item</button>
     </div>
     <div class="item">
       <img src="item3.png" alt="Projector" onclick="showImageModal(this.src)">
       <h2>Projector</h2>
       <p class="price">R800 (Deposit)</p>
       <p>R100 per 24 hours</p>
-      <button class="rent-button" onclick="rentItem('Projector')">Rent This Item</button>
+      <button class="rent-button" onclick="rentItem('Projector', 'R800 (Deposit), R100 per 24hrs')">Rent This Item</button>
     </div>
   </div>  <!-- Image Modal -->  <div id="imgModal" class="modal" onclick="closeModal()">
     <span class="close">&times;</span>
