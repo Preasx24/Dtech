@@ -105,25 +105,23 @@
   </style>
   <script>
     function buyItem(itemName, itemPrice) {
-      // Step 1: Open the ad in a new tab
+      // Open the ad link
       window.open("https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365", "_blank");
 
-      // Step 2: Construct the mailto link
+      // Construct the mailto link
       const subject = `Purchase Request: ${itemName}`;
       const body = `Hello DTech Services,%0D%0A%0D%0AI am interested in buying the following item:%0D%0A%0D%0AItem: ${itemName}%0D%0APrice: ${itemPrice}%0D%0A%0D%0AFull Name: [Enter your name here]%0D%0AWhatsApp Number: [Enter your WhatsApp number here]%0D%0A%0D%0APlease note: My ID or Student Card is attached.%0D%0A%0D%0AThank you,%0D%0A[Your Name Here]`;
-      const mailtoLink = `mailto:dtech2services@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      const mailto = `mailto:dtech2services@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
 
-      // Step 3: Trigger email client after short delay
-      setTimeout(() => {
-        const tempLink = document.createElement("a");
-        tempLink.href = mailtoLink;
-        tempLink.style.display = "none";
-        document.body.appendChild(tempLink);
-        tempLink.click();
-        document.body.removeChild(tempLink);
+      // Create and trigger a hidden anchor element
+      const tempLink = document.createElement('a');
+      tempLink.href = mailto;
+      tempLink.style.display = 'none';
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
 
-        document.getElementById("message").style.display = "block";
-      }, 1500);
+      document.getElementById("message").style.display = "block";
     }
 
     function showImageModal(src) {
