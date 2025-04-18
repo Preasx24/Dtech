@@ -95,7 +95,42 @@
       font-weight: bold;
       cursor: pointer;
     }
+    #message {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #16a34a;
+      font-weight: bold;
+      display: none;
+    }
   </style>
+  <script>
+    function rentItem(itemName, itemPrice) {
+      const subject = `Rental Request: ${itemName}`;
+      const body = `Hello DTech Services,%0D%0A%0D%0AI would like to rent the following item:%0D%0A%0D%0AItem Name: ${itemName}%0D%0APrice: ${itemPrice}%0D%0A%0D%0AFull Name: [Enter your full name here]%0D%0AWhatsApp Number: [Enter your WhatsApp number here]%0D%0A%0D%0ANote: I will attach a picture of my ID or Student Card as requested.%0D%0A%0D%0AThank you,%0D%0A[Your Name Here]`;
+
+      const mailtoLink = `mailto:dtech2services@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+      // Step 1: Open email app
+      window.location.href = mailtoLink;
+
+      // Step 2: Open ad in new tab
+      setTimeout(() => {
+        window.open("https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365", "_blank");
+        document.getElementById("message").style.display = "block";
+      }, 1000);
+    }
+
+    function showImageModal(src) {
+      const modal = document.getElementById("imgModal");
+      const modalImg = document.getElementById("modalImage");
+      modalImg.src = src;
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+  </script>
 </head>
 <body>
   <h1>Available Items for Rent</h1>
@@ -131,38 +166,6 @@
     </div>
   </div>
 
-  <script>
-    function rentItem(itemName, itemPrice) {
-      const subject = `Rental Request: ${itemName}`;
-      const body = `Hello DTech Services,
-
-I would like to rent the following item:
-
-Item Name: ${itemName}
-Price: ${itemPrice}
-
-Full Name: [Enter your full name here]
-WhatsApp Number: [Enter your WhatsApp number here]
-
-Note: I will attach a picture of my ID or Student Card as requested.
-
-Thank you,
-[Your Name Here]`;
-
-      const mailtoLink = `mailto:dtech2services@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailtoLink;
-    }
-
-    function showImageModal(src) {
-      const modal = document.getElementById("imgModal");
-      const modalImg = document.getElementById("modalImage");
-      modalImg.src = src;
-      modal.style.display = "block";
-    }
-
-    function closeModal() {
-      document.getElementById("imgModal").style.display = "none";
-    }
-  </script>
+  <div id="message">Thank you! Please check your email app to complete your request.</div>
 </body>
 </html>
